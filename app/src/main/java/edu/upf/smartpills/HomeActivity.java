@@ -1,9 +1,11 @@
 package edu.upf.smartpills;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,9 +74,25 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_umanual) {
-
+            Intent intent = new Intent(HomeActivity.this, UserManualActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_order) {
-
+            //In case of refill show an alert and simply display a Toast
+            final AlertDialog.Builder mbuilder = new AlertDialog.Builder(HomeActivity.this);
+            mbuilder.setTitle(R.string.order_pills);
+            mbuilder.setMessage(R.string.refill_question);
+            mbuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    Toast.makeText(HomeActivity.this, R.string.refill_incoming, Toast.LENGTH_SHORT).show();
+                }
+            }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            }).create().show();
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
             startActivity(intent);
@@ -81,7 +100,7 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_notif) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_delete) {
 
         }
 

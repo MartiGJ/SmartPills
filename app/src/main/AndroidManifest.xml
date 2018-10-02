@@ -22,8 +22,11 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TreatmentsActivity" />
-        <activity android:name=".AboutActivity"
-            android:label="@string/title_activity_about"/>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" />
+        <activity android:name=".UserManualActivity"
+            android:label="@string/title_activity_user_manual" />
     </application>
 
 </manifest>

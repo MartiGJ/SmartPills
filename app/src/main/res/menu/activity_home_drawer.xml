@@ -31,12 +31,16 @@
         </menu>
     </item>
 
-    <group android:id="@+id/menu_bottom"
-        android:checkableBehavior="single">
-        <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/ic_menu_share"
-        android:title="Share" />
-    </group>
+    <item android:title="Danger Zone">
+        <menu>
+            <item
+                android:id="@+id/nav_delete"
+                android:icon="@drawable/ic_menu_delete"
+                android:title="Delete User" />
+        </menu>
+    </item>
+
+
+
 
 </menu>
