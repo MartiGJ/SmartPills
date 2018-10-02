@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_umanual"
+            android:icon="@drawable/ic_menu_umanual"
+            android:title="User Manual" />
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_menu_order"
+            android:title="Order Pills" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="About" />
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_menu_settings"
+                android:title="General" />
+            <item
+                android:id="@+id/nav_notif"
+                android:icon="@drawable/ic_menu_notif"
+                android:title="Notifications"/>
+        </menu>
+    </item>
+
+    <group android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+        <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_menu_share"
+        android:title="Share" />
+    </group>
+
+</menu>
